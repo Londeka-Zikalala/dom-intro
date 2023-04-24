@@ -16,8 +16,13 @@
   font-weight: bold;
 }
 
-.total {
+.normal{
   color:black;
+  font-weight: bold ;
+  font-size: 1em;
+}                                           /*New class*/  
+
+.total {
   font-weight: bold;
   font-size: 2em;
 }

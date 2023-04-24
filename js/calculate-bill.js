@@ -41,7 +41,7 @@ function calculateBtnClicked(){
         billTotalElement.classList.add("warning");
         billTotalElement.classList.remove("danger");
       } else{
-        billTotalElement.classList.add("total");
+        billTotalElement.classList.add("normal");
       }
 }
 
