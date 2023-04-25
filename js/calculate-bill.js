@@ -23,7 +23,7 @@ function calculateBtnClicked(){
     var billTotal = 0;
     //loop over all the bill items
     for (var i=0;i<billItems.length;i++){
-        var billItem = billItems[i].trim();
+        var billItem = billItems[i].trim().toLowerCase();
         if (billItem === "call"){
             billTotal += 2.75;
         }
