@@ -39,7 +39,9 @@ function textBillTotal() {
 else if (totalCost >= 30){
     totalCostElem.classList.add("warning");
     totalCostElem.classList.remove("danger");
-}
+} else{
+    totalCostElem.classList.remove("warning","danger");
+  }
 
 }
 textBillAddBtn.addEventListener('click', textBillTotal)
