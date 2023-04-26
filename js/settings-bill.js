@@ -35,7 +35,10 @@ function updateBillWithSettings(){
      smsCostSetting = Number(smsCostSettingElem.value);
      warningLevelSetting = Number(warningLevelSettingElem.value);
     criticalLevelSetting = Number(criticalLevelSettingElem.value);
-    if (total >= criticalLevelSetting) {
+    if(total > criticalLevelSetting){
+        alert("critical level reached, update settings");
+    }
+    else if (total >= criticalLevelSetting) {
         totalSettingsElem.classList.remove("warning");
         totalSettingsElem.classList.add("danger");
       } else if (total >= warningLevelSetting) {
@@ -66,7 +69,10 @@ function billWithSettingsTotal(){
   warningLevelSettingElem.innerHTML = warningLevelSetting;
   criticalLevelSettingElem.innerHTML = criticalLevelSetting;
 
-  if (total >= criticalLevelSetting) {
+    if(total > criticalLevelSetting){
+        alert("critical level reached, update settings");
+    }
+  else if (total >= criticalLevelSetting) {
     totalSettingsElem.classList.remove("warning");
     totalSettingsElem.classList.add("danger");
   } else if (total >= warningLevelSetting) {
