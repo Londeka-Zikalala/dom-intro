@@ -61,10 +61,10 @@ function billWithSettingsTotal(){
         var billItemTypeWithSettings = checkedRadioBtn.value
         // billItemTypeWithSettings will be 'call' or 'sms'
         if (billItemTypeWithSettings === "call"){
-            callsTotal += callCostSetting
+            callsTotalThree += callCostSetting
         }
         else if (billItemTypeWithSettings === "sms"){
-            smsTotal += smsCostSetting;
+            smsTotalThree += smsCostSetting;
         }
     }    console.log(checkedRadioBtn)
    //update totals

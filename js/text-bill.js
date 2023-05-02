@@ -32,12 +32,12 @@ function textBillTotal() {
   var totalCostOne = callsTotalOne + smsTotalOne;
   totalCostElem.innerHTML = totalCostOne.toFixed(2);
   
-  if (totalCost >= 50){
+  if (totalCostOne >= 50){
     // adding the danger class will make the text red
     totalCostElem.classList.add("danger");
     totalCostElem.classList.remove("warning");
 }
-else if (totalCost >= 30){
+else if (totalCostOne >= 30){
     totalCostElem.classList.add("warning");
     totalCostElem.classList.remove("danger");
 } else{
