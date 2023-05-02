@@ -35,8 +35,16 @@ function updateBillWithSettings(){
      smsCostSetting = Number(smsCostSettingElem.value);
      warningLevelSetting = Number(warningLevelSettingElem.value);
     criticalLevelSetting = Number(criticalLevelSettingElem.value);
-    
-    if (total >= criticalLevelSetting) {
+
+    totalCost = callsTotal + smsTotal;
+    callTotalSettingsElem.innerHTML = callsTotal.toFixed(2);
+    smsTotalSettingsElem.innerHTML = smsTotal.toFixed(2);
+    totalSettingsElem.innerHTML = total.toFixed(2);
+    warningLevelSettingElem.innerHTML = warningLevelSetting;
+    criticalLevelSettingElem.innerHTML = criticalLevelSetting;
+  
+    if (totalCost >= criticalLevelSetting) {
+        alert("critical level reached, update settings");
         totalSettingsElem.classList.remove("warning");
         totalSettingsElem.classList.add("danger");
       } else if (total >= warningLevelSetting) {
@@ -51,26 +59,25 @@ function billWithSettingsTotal(){
    if (checkedRadioBtn){
 
         var billItemTypeWithSettings = checkedRadioBtn.value
-        // billItemTypeWithSettings will be 'c' or 's'
-        if (billItemTypeWithSettings === "c"){
+        // billItemTypeWithSettings will be 'call' or 'sms'
+        if (billItemTypeWithSettings === "call"){
             callsTotal += callCostSetting
         }
-        else if (billItemTypeWithSettings === "s"){
+        else if (billItemTypeWithSettings === "sms"){
             smsTotal += smsCostSetting;
         }
     }    console.log(checkedRadioBtn)
    //update totals
-    total = callsTotal + smsTotal;
+    totalCost = callsTotal + smsTotal;
   callTotalSettingsElem.innerHTML = callsTotal.toFixed(2);
   smsTotalSettingsElem.innerHTML = smsTotal.toFixed(2);
   totalSettingsElem.innerHTML = total.toFixed(2);
   warningLevelSettingElem.innerHTML = warningLevelSetting;
   criticalLevelSettingElem.innerHTML = criticalLevelSetting;
 
-    if(total > criticalLevelSetting){
-        alert("critical level reached, update settings");
-    }
-  else if (total >= criticalLevelSetting) {
+    
+   if (total >= criticalLevelSetting) {
+    alert("critical level reached, update settings");
     totalSettingsElem.classList.remove("warning");
     totalSettingsElem.classList.add("danger");
   } else if (total >= warningLevelSetting) {
