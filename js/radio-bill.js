@@ -12,8 +12,8 @@ const textTotalAddBtnElem = document.querySelector('.textTotalAddBtn')
 // * add the appropriate value to the running total
 // * add nothing for invalid values that is not 'call' or 'sms'.
 // * display the latest total on the screen
-var callsTotal = 0;
-var smsTotal = 0;
+var callsTotalTwo = 0;
+var smsTotalTwo = 0;
 
 function radioBillTotal(){
     var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
@@ -21,18 +21,18 @@ function radioBillTotal(){
         var billItemType = checkedRadioBtn.value
         // billItemType will be 'call' or 'sms'
         if (billItemType === "call"){
-            callsTotal += 2.75
+            callsTotalTwo+= 2.75
         }
         else if (billItemType === "sms"){
-            smsTotal += 0.75;
+            smsTotalTwo += 0.75;
         }
     }
    
     //update the totals that is displayed on the screen.
-    callsTotalTwoElem.innerHTML = callsTotal.toFixed(2);
-    smsTotalTwoElem.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
-    totalCostTwoElem.innerHTML = totalCost.toFixed(2);
+    callsTotalTwoElem.innerHTML = callsTotalTwo.toFixed(2);
+    smsTotalTwoElem.innerHTML = smsTotalTwo.toFixed(2);
+    var totalCostTwo = callsTotalTwo + smsTotalTwo;
+    totalCostTwoElem.innerHTML = totalCostTwo.toFixed(2);
     
     if (totalCost >= 50){
         // adding the danger class will make the text red

@@ -18,9 +18,9 @@ const updateSettingsBtn = document.querySelector('.updateSettings');
     var criticalLevelSetting = 0;
 
 // create a variables that will keep track of all three totals.
-var callsTotal = 0;
-var smsTotal = 0;
-var totalCost = 0;
+var callsTotalThree = 0;
+var smsTotalThree = 0;
+var totalCostThree = 0;
 //add an event listener for when the 'Update settings' button is pressed
 //updateSettingsBtn.addEventListener(click, function())
 //add an event listener for when the add button is pressed
@@ -36,18 +36,18 @@ function updateBillWithSettings(){
      warningLevelSetting = Number(warningLevelSettingElem.value);
     criticalLevelSetting = Number(criticalLevelSettingElem.value);
 
-    totalCost = callsTotal + smsTotal;
-    callTotalSettingsElem.innerHTML = callsTotal.toFixed(2);
-    smsTotalSettingsElem.innerHTML = smsTotal.toFixed(2);
-    totalSettingsElem.innerHTML = total.toFixed(2);
+    totalCostThree = callsTotalThree + smsTotalThree;
+    callTotalSettingsElem.innerHTML = callsTotalThree.toFixed(2);
+    smsTotalSettingsElem.innerHTML = smsTotalThree.toFixed(2);
+    totalSettingsElem.innerHTML = totalCostThree.toFixed(2);
     warningLevelSettingElem.innerHTML = warningLevelSetting;
     criticalLevelSettingElem.innerHTML = criticalLevelSetting;
   
-    if (totalCost >= criticalLevelSetting) {
+    if (totalCostThree >= criticalLevelSetting) {
         alert("critical level reached, update settings");
         totalSettingsElem.classList.remove("warning");
         totalSettingsElem.classList.add("danger");
-      } else if (total >= warningLevelSetting) {
+      } else if (totalCostThree >= warningLevelSetting) {
         totalSettingsElem.classList.remove("danger");
         totalSettingsElem.classList.add("warning");
       } else {
@@ -68,19 +68,19 @@ function billWithSettingsTotal(){
         }
     }    console.log(checkedRadioBtn)
    //update totals
-    totalCost = callsTotal + smsTotal;
-  callTotalSettingsElem.innerHTML = callsTotal.toFixed(2);
-  smsTotalSettingsElem.innerHTML = smsTotal.toFixed(2);
-  totalSettingsElem.innerHTML = total.toFixed(2);
+    totalCostThree = callsTotalThree + smsTotalThree;
+  callTotalSettingsElem.innerHTML = callsTotalThree.toFixed(2);
+  smsTotalSettingsElem.innerHTML = smsTotalThree.toFixed(2);
+  totalSettingsElem.innerHTML = totalCostThree.toFixed(2);
   warningLevelSettingElem.innerHTML = warningLevelSetting;
   criticalLevelSettingElem.innerHTML = criticalLevelSetting;
 
     
-   if (total >= criticalLevelSetting) {
+   if (totalCostThree >= criticalLevelSetting) {
     alert("critical level reached, update settings");
     totalSettingsElem.classList.remove("warning");
     totalSettingsElem.classList.add("danger");
-  } else if (total >= warningLevelSetting) {
+  } else if (totalCostThree >= warningLevelSetting) {
     totalSettingsElem.classList.remove("danger");
     totalSettingsElem.classList.add("warning");
   } else {

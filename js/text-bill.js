@@ -13,8 +13,8 @@ const totalCostElem = document.querySelector('.totalOne')
 // * add nothing for invalid values that is not 'call' or 'sms'.
 // * display the latest total on the screen
 // define global variables
-var callsTotal = 0;
-var smsTotal = 0;
+var callsTotalOne = 0;
+var smsTotalOne = 0;
 
 // define the textBillTotal function
 function textBillTotal() {
@@ -22,15 +22,16 @@ function textBillTotal() {
   var billTypeEntered = billTypeText.value.trim().toLowerCase();
   // update the correct total
   if (billTypeEntered === "call") {
-    callsTotal += 2.75;
+    callsTotalOne += 2.75;
   } else if (billTypeEntered === "sms") {
-    smsTotal += 0.75;
+    smsTotalOne += 0.75;
   }
-  callTotalElem.innerHTML = callsTotal.toFixed(2);
-  smsTotalElem.innerHTML = smsTotal.toFixed(2);
-  var totalCost = callsTotal + smsTotal;
-  totalCostElem.innerHTML = totalCost.toFixed(2);
-
+  
+  callTotalElem.innerHTML = callsTotalOne.toFixed(2);
+  smsTotalElem.innerHTML = smsTotalOne.toFixed(2);
+  var totalCostOne = callsTotalOne + smsTotalOne;
+  totalCostElem.innerHTML = totalCostOne.toFixed(2);
+  
   if (totalCost >= 50){
     // adding the danger class will make the text red
     totalCostElem.classList.add("danger");

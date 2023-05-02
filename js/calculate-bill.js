@@ -18,7 +18,7 @@ function calculateBtnClicked(){
     // get the string entered in the textArea
     var billString = billStringElement.value;
     //split the string
-    var billItems = billString.split(",").toLowerCase();
+    var billItems = billString.split(",");
     // a variable for the total phone bill.
     var billTotal = 0;
     //loop over all the bill items
