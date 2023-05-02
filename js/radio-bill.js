@@ -34,12 +34,12 @@ function radioBillTotal(){
     var totalCostTwo = callsTotalTwo + smsTotalTwo;
     totalCostTwoElem.innerHTML = totalCostTwo.toFixed(2);
     
-    if (totalCost >= 50){
+    if (totalCostTwo >= 50){
         // adding the danger class will make the text red
         totalCostTwoElem.classList.add("danger");
         totalCostTwoElem.classList.remove("warning");
     }
-    else if (totalCost >= 30){
+    else if (totalCostTwo >= 30){
         totalCostTwoElem.classList.add("warning");
         totalCostTwoElem.classList.remove("danger");
     }
