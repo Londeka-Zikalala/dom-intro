@@ -1,7 +1,7 @@
 //get a reference to the calculate button
 const calculateBtn = document.querySelector(".calculateBtn");
 //get a reference to the billTotal element
-const billTotalElement = document.querySelector(".billTotal");
+const billTotalElement = document.querySelector(".total");
 //get a reference to the billString
 const billStringElement = document.querySelector(".billString");
 //create the function that will be called when the calculate button is pressed

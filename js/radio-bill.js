@@ -1,7 +1,7 @@
 // get a reference to the sms or call total elements
 const callsTotalTwoElem = document.querySelector('.callTotalTwo');
 const smsTotalTwoElem = document.querySelector('.smsTotalTwo');
-const totalCostTwoElem = document.querySelector('.totalCostTwo');
+const totalCostTwoElem = document.querySelector('.totalTwo');
 
 // get a reference to the add button
 const radioBillAddBtn = document.querySelector('.radioBillAddBtn');
