@@ -54,6 +54,10 @@ function updateBillWithSettings(){
       }
 } 
 function billWithSettingsTotal(){
+  if(totalCostThree >= criticalLevelSetting){
+    billWithSettingsAddBtn.removeEventListener('click', billWithSettingsTotal)
+  }
+  else{
     var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
    if (checkedRadioBtn){
 
@@ -65,7 +69,8 @@ function billWithSettingsTotal(){
         else if (billItemTypeWithSettings === "sms"){
             smsTotalThree += smsCostSetting;
         }
-    }    console.log(checkedRadioBtn)
+      }
+    }    
    //update totals
     totalCostThree = callsTotalThree + smsTotalThree;
   callTotalSettingsElem.innerHTML = callsTotalThree.toFixed(2);
