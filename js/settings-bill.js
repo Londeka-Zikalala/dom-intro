@@ -44,7 +44,6 @@ function updateBillWithSettings(){
     criticalLevelSettingElem.innerHTML = criticalLevelSetting;
   
     if (totalCostThree >= criticalLevelSetting) {
-        alert("critical level reached, update settings");
         totalSettingsElem.classList.remove("warning");
         totalSettingsElem.classList.add("danger");
       } else if (totalCostThree >= warningLevelSetting) {
