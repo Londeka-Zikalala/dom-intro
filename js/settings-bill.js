@@ -54,10 +54,6 @@ function updateBillWithSettings(){
       }
 } 
 function billWithSettingsTotal(){
-  if(totalCostThree >= criticalLevelSetting){
-    billWithSettingsAddBtn.removeEventListener('click', billWithSettingsTotal)
-  }
-  else{billWithSettingsAddBtn.addEventListener('click', billWithSettingsTotal);}
     var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
    if (checkedRadioBtn){
 
@@ -69,7 +65,6 @@ function billWithSettingsTotal(){
         else if (billItemTypeWithSettings === "sms"){
             smsTotalThree += smsCostSetting;
         }
-      
     }    
    //update totals
     totalCostThree = callsTotalThree + smsTotalThree;
@@ -84,13 +79,17 @@ function billWithSettingsTotal(){
     alert("critical level reached, update settings");
     totalSettingsElem.classList.remove("warning");
     totalSettingsElem.classList.add("danger");
-  } else if (totalCostThree >= warningLevelSetting) {
+    billWithSettingsAddBtn.removeEventListener('click', billWithSettingsTotal)
+  } else{
+    billWithSettingsAddBtn.addEventListener('click', billWithSettingsTotal)
+    if (totalCostThree >= warningLevelSetting) {
     totalSettingsElem.classList.remove("danger");
     totalSettingsElem.classList.add("warning");
   } else {
     totalSettingsElem.classList.remove("warning", "danger");
   }
 }
+}
 
-
+billWithSettingsAddBtn.addEventListener('click', billWithSettingsTotal);
 updateSettingsBtn.addEventListener('click',updateBillWithSettings);
