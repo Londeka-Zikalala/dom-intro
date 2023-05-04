@@ -95,5 +95,5 @@ function billWithSettingsTotal(){
 }
 }
 
-billWithSettingsAddBtn.addEventListener('click', billWithSettingsTotal);
+
 updateSettingsBtn.addEventListener('click',updateBillWithSettings);
