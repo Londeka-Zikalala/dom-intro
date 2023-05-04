@@ -80,7 +80,7 @@ function billWithSettingsTotal(){
 
     
    if (totalCostThree >= criticalLevelSetting) {
-    alert("critical level reached, update settings");
+
     totalSettingsElem.classList.remove("warning");
     totalSettingsElem.classList.add("danger");
     billWithSettingsAddBtn.removeEventListener('click', billWithSettingsTotal)
