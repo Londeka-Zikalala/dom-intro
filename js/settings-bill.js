@@ -44,14 +44,18 @@ function updateBillWithSettings(){
     criticalLevelSettingElem.innerHTML = criticalLevelSetting;
   
     if (totalCostThree >= criticalLevelSetting) {
-        totalSettingsElem.classList.remove("warning");
-        totalSettingsElem.classList.add("danger");
-      } else if (totalCostThree >= warningLevelSetting) {
-        totalSettingsElem.classList.remove("danger");
-        totalSettingsElem.classList.add("warning");
-      } else {
-        totalSettingsElem.classList.remove("warning", "danger");
-      }
+      totalSettingsElem.classList.remove("warning");
+      totalSettingsElem.classList.add("danger");
+      billWithSettingsAddBtn.removeEventListener('click', billWithSettingsTotal)
+    } else{
+      billWithSettingsAddBtn.addEventListener('click', billWithSettingsTotal)
+      if (totalCostThree >= warningLevelSetting) {
+      totalSettingsElem.classList.remove("danger");
+      totalSettingsElem.classList.add("warning");
+    } else {
+      totalSettingsElem.classList.remove("warning", "danger");
+    }
+  }
 } 
 function billWithSettingsTotal(){
     var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
